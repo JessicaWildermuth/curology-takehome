@@ -41,10 +41,10 @@ class App extends React.Component {
   }
 
   render() {
-    const { quantity, total } = this.state;
+    const { total } = this.state;
     return (
       <div>
-        <ProductInfo quantity={quantity} total={total} updateQuantity={this.updateQuantity} />
+        <ProductInfo total={total} updateQuantity={this.updateQuantity} />
       </div>
     );
   }

@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const ProductInfo = ({total, quantity, updateQuantity}) => (
+const ProductInfo = ({ total, updateQuantity }) => (
   <div>
     <h1>Magic Potion #1</h1>
     <img src="./magic-potion.jpg" alt="productImage" />
@@ -12,5 +13,10 @@ const ProductInfo = ({total, quantity, updateQuantity}) => (
     <input readOnly value={total} />
   </div>
 );
+
+ProductInfo.propTypes = {
+  total: PropTypes.string.isRequired,
+  updateQuantity: PropTypes.func.isRequired,
+};
 
 export default ProductInfo;
