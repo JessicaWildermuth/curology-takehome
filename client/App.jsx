@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductInfo from './ProductInfo';
+import BillingInfo from './BillingInfo';
 
 class App extends React.Component {
   constructor(props) {
@@ -20,6 +21,7 @@ class App extends React.Component {
     };
     this.updateQuantity = this.updateQuantity.bind(this);
     this.updateTotal = this.updateTotal.bind(this);
+    this.updateBilling = this.updateBilling.bind(this);
   }
 
   updateQuantity(event) {
@@ -33,18 +35,41 @@ class App extends React.Component {
     const { quantity } = this.state;
     const basePrice = 49.99;
 
-    const total = basePrice * quantity;
+    const total = (basePrice * quantity).toString();
 
     this.setState({
       total,
     });
   }
 
+  updateBilling(event) {
+    const { name, value } = event.target;
+
+    this.setState({
+      [name]: value,
+    });
+  }
+
   render() {
-    const { total } = this.state;
+    const {
+      firstName, lastName, email, street1, street2, city, state, zip, ccNum, exp, total,
+    } = this.state;
     return (
       <div>
         <ProductInfo total={total} updateQuantity={this.updateQuantity} />
+        <BillingInfo
+          firstName={firstName}
+          lastName={lastName}
+          email={email}
+          street1={street1}
+          street2={street2}
+          city={city}
+          state={state}
+          zip={zip}
+          ccNum={ccNum}
+          exp={exp}
+          updateBilling={this.updateBilling}
+        />
       </div>
     );
   }
