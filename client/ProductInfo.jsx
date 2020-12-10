@@ -2,6 +2,7 @@ import React from 'react';
 
 const ProductInfo = ({total, quantity, updateQuantity}) => (
   <div>
+    <h1>Magic Potion #1</h1>
     <img src="./magic-potion.jpg" alt="productImage" />
     <select name="quantity" onChange={updateQuantity}>
       <option>1</option>
