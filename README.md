@@ -31,7 +31,7 @@ Magic Potion Single Page
         "zip": "string"
       },
       "phone": "string",
-      "quantity": number,
+      "quantity": "number",
       "total": "string",
       "payment": {
         "ccNum": "string",
