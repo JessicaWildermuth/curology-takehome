@@ -4,10 +4,7 @@ Magic Potion Single Page
 
 ## Table of Contents
 1. [API](#api)
-
-## Usage
-
-## Requirements
+2. [Database Schema] (#database-schema)
 
 ## API
 
@@ -100,3 +97,5 @@ Magic Potion Single Page
    
 **Success Status Code:** '204'
 **Failure Status Code:** '404'
+
+## Database Schema
