@@ -51,6 +51,7 @@ Magic Potion Single Page
   * Get '/api/magic'
   
 **Success Status Code:** '200'
+
 **Failure Status Code:** '404'
 
 **Returns:**
@@ -84,6 +85,7 @@ Magic Potion Single Page
    * PATCH '/api/magic'
  
 **Success Status Code:** '204'
+
 **Failure Status Code:** '404'
 
 **Request Body:** 
@@ -99,6 +101,7 @@ Magic Potion Single Page
    * DELETE '/api/magic'
    
 **Success Status Code:** '204'
+
 **Failure Status Code:** '404'
 
 ## Database Schema
