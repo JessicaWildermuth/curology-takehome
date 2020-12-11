@@ -3,10 +3,7 @@
 Magic Potion Single Page 
 
 ## Table of Contents
-1.[Usage] (#Usage)
-2. [Requirements] (#requirments)
-3. [Development] (#development)
-4. [API] (#api)
+1. [API] (#api)
 
 ## Usage
 
