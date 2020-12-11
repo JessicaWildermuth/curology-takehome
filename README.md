@@ -4,7 +4,7 @@ Magic Potion Single Page
 
 ## Table of Contents
 1. [API](#api)
-2. [Database Schema] (#database-schema)
+2. [Database Schema](#database-schema)
 
 ## API
 
