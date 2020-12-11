@@ -151,7 +151,7 @@ class App extends React.Component {
       state, zip, ccNum, exp, total, phone, quantity,
     } = this.state;
     return (
-      <div>
+      <div className="flexContainer">
         <ProductInfo total={total} updateQuantity={this.updateQuantity} quantity={quantity} />
         <BillingInfo
           firstName={firstName}

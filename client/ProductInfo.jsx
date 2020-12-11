@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ProductInfo = ({ total, updateQuantity, quantity }) => (
-  <div>
+  <div className="componentContainer product">
     <h1>Magic Potion #1</h1>
     <img src="./magic-potion.jpg" alt="productImage" />
     <select name="quantity" value={quantity} onChange={updateQuantity}>

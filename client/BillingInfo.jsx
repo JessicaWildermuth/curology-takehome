@@ -6,9 +6,9 @@ const BillingInfo = ({
   state, zip, ccNum, exp, updateBilling, submitOrder,
   phone,
 }) => (
-  <div>
+  <div className="componentContainer">
     <h1>Billing | Customer Information</h1>
-    <form onSubmit={submitOrder}>
+    <form onSubmit={submitOrder} className="billingInfo">
       <input type="text" value={firstName} name="firstName" onChange={updateBilling} placeholder="First Name" required />
       <input type="text" value={lastName} name="lastName" onChange={updateBilling} placeholder="Last Name" required />
       <input type="text" value={street1} name="street1" onChange={updateBilling} placeholder="Street 1" required />
@@ -68,7 +68,7 @@ const BillingInfo = ({
         <option value="WI">Wisconsin</option>
         <option value="WY">Wyoming</option>
       </select>
-      <input type="text" value={zip} name="zip" onChange={updateBilling} placeholder="zip" required />
+      <input type="text" value={zip} name="zip" onChange={updateBilling} placeholder="Zip Code" required />
       <input type="email" value={email} name="email" onChange={updateBilling} placeholder="Email" required />
       <input type="tel" value={phone} name="phone" onChange={updateBilling} placeholder="Phone Number" required />
       <input type="text" minLength="15" value={ccNum} name="ccNum" onChange={updateBilling} placeholder="Credit Card Number" required />
