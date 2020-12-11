@@ -26,7 +26,7 @@ app.post('/api/magic', (req, res) => {
   };
 
   db.checkForExistingCustomer(customerData, (error, customer) => {
-    if (!customer.length) {
+    if (!customer || !customer.length) {
       const customerInfo = [
         firstName, lastName, email, phone, street1,
         street2, city, state, zip, ccNum, exp,
@@ -35,7 +35,6 @@ app.post('/api/magic', (req, res) => {
         if (error2) {
           res.status(500).send(error2);
         } else {
-          console.log(id);
           const customerId = id[0].customer_id;
           db.checkOrders([customerId], (error3, order) => {
             if (error3) {
