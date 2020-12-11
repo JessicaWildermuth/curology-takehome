@@ -3,13 +3,13 @@
 Magic Potion Single Page 
 
 ## Table of Contents
-1. [API] (##api)
+1. [API](#api)
 
 ## Usage
 
 ## Requirements
 
-## API
+# API
 
 ### Create new order for magic potion #1
   * POST '/api/magic'
