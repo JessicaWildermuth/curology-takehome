@@ -107,8 +107,8 @@ Magic Potion Single Page
 ## Database Schema
 
 **PostgreSQL Database Tables:** 
-
-  **customers** (
+```
+  customers (
   customer_id    serial PRIMARY KEY,
   first_name     varchar NOT NULL,
   last_name      varchar NOT NULL,
@@ -122,8 +122,9 @@ Magic Potion Single Page
   ccNum         varchar NOT NULL,
   expiration    varchar NOT NULL
 );
+
  
- **orders** (
+ orders (
   id            serial PRIMARY KEY,
   customer_ref  int REFERENCES customers(customer_id),
   total         varchar(10) NOT NULL,
@@ -131,6 +132,7 @@ Magic Potion Single Page
   orderDate     TIMESTAMP default now(),
   fulfilled      boolean
 );
+```
 
 I created two tables, one for the customers billing information and another for the specific order information. I chose to separate them so that if more magic potions or similiar products became available, the customer's billing information would already be stored to expediate the shopping process withouth keeping old order records that would take up unncessary space over time. 
 
