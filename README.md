@@ -155,7 +155,9 @@ Also, I would have spent more time on CSS, which is something I really enjoy. Ho
 
 ## Areas For Improvement And Scaling
 
-In regards to my own work, I feel that I could have made my components more reusable. I also have some read heavy code that I would like to have cleaned up and made more easily understood without actually reading through the code. 
+In regards to my own work, I feel that I could have made my components more reusable. I also have some read heavy code that I would like to have cleaned up and made more easily understood without actually reading through the code.
+
+Additionally, I would focus on responsive web design in order to maintain a visual appealing UI for multiple devices/screens.
 
 In terms of overal scaling, I think having a login feature for users so that they already have the billing information stored and compiled for any subsequent order would be beneficially. Similairly with saving payment methods. 
 
