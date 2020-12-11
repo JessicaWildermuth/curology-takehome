@@ -3,7 +3,7 @@
 Magic Potion Single Page 
 
 ## Table of Contents
-1. [API] (#api)
+1. [API] (##api)
 
 ## Usage
 
