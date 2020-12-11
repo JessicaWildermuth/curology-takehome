@@ -1,6 +1,7 @@
 import React from 'react';
 import ProductInfo from './ProductInfo';
 import BillingInfo from './BillingInfo';
+import helpers from './helperFunctions';
 
 class App extends React.Component {
   constructor(props) {
@@ -43,11 +44,19 @@ class App extends React.Component {
   }
 
   updateBilling(event) {
-    const { name, value } = event.target;
+    const { name } = event.target;
+    let { value } = event.target;
 
+    if (name === 'ccNum') {
+      value = helpers.formatCreditCard(value);
+    }
     this.setState({
       [name]: value,
     });
+  }
+
+  submitOrder(event) {
+    event.preventDefault();
   }
 
   render() {
@@ -69,6 +78,7 @@ class App extends React.Component {
           ccNum={ccNum}
           exp={exp}
           updateBilling={this.updateBilling}
+          submitOrder={this.submitOrder}
         />
       </div>
     );
