@@ -15,6 +15,7 @@ const BillingInfo = ({
       <input type="text" value={street2} name="street2" onChange={updateBilling} placeholder="Street 2" />
       <input type="text" value={city} name="city" onChange={updateBilling} placeholder="City" required />
       <select name="state" value={state} onChange={updateBilling} required>
+        <option value="">Select State</option>
         <option value="AL">Alabama</option>
         <option value="AK">Alaska</option>
         <option value="AZ">Arizona</option>
