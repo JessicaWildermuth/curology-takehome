@@ -9,7 +9,7 @@ Magic Potion Single Page
 
 ## Requirements
 
-# API
+## API
 
 ### Create new order for magic potion #1
   * POST '/api/magic'
