@@ -1,4 +1,6 @@
 import React from 'react';
+import axios from 'axios';
+
 import ProductInfo from './ProductInfo';
 import BillingInfo from './BillingInfo';
 import helpers from './helperFunctions';
@@ -15,7 +17,8 @@ class App extends React.Component {
       city: '',
       state: '',
       zip: '',
-      quantity: '1',
+      phone: '',
+      quantity: 1,
       total: '49.99',
       ccNum: '',
       exp: '',
@@ -25,12 +28,13 @@ class App extends React.Component {
     this.updateBilling = this.updateBilling.bind(this);
     this.reset = this.reset.bind(this);
     this.submitOrder = this.submitOrder.bind(this);
+    this.compileOrderInformation = this.compileOrderInformation.bind(this);
   }
 
   updateQuantity(event) {
     const { name, value } = event.target;
     this.setState({
-      [name]: value,
+      [name]: Number(value),
     }, this.updateTotal);
   }
 
@@ -68,7 +72,59 @@ class App extends React.Component {
 
   submitOrder(event) {
     event.preventDefault();
-    this.reset();
+
+    const order = this.compileOrderInformation();
+
+    axios({
+      method: 'post',
+      url: '/api/magic',
+      data: order,
+    })
+      .then((response) => {
+        console.log(response.data);
+        if (typeof response.data === 'string') {
+          alert(response.data);
+        } else {
+          alert('Order Placed!');
+          this.reset();
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  compileOrderInformation() {
+    const {
+      firstName, lastName, email, street1, street2, city,
+      state, zip, ccNum, exp, quantity, total, phone,
+    } = this.state;
+
+    const payment = {
+      ccNum,
+      exp,
+    };
+
+    const address = {
+      street1,
+      street2,
+      city,
+      state,
+      zip,
+    };
+
+    const orderInformation = {
+      firstName,
+      lastName,
+      email,
+      address,
+      phone,
+      quantity,
+      total,
+      payment,
+    };
+
+    return orderInformation;
   }
 
   reset() {
@@ -81,7 +137,8 @@ class App extends React.Component {
       city: '',
       state: '',
       zip: '',
-      quantity: '1',
+      phone: '',
+      quantity: 1,
       total: '49.99',
       ccNum: '',
       exp: '',
@@ -90,11 +147,12 @@ class App extends React.Component {
 
   render() {
     const {
-      firstName, lastName, email, street1, street2, city, state, zip, ccNum, exp, total,
+      firstName, lastName, email, street1, street2, city,
+      state, zip, ccNum, exp, total, phone, quantity,
     } = this.state;
     return (
       <div>
-        <ProductInfo total={total} updateQuantity={this.updateQuantity} />
+        <ProductInfo total={total} updateQuantity={this.updateQuantity} quantity={quantity} />
         <BillingInfo
           firstName={firstName}
           lastName={lastName}
@@ -104,6 +162,7 @@ class App extends React.Component {
           city={city}
           state={state}
           zip={zip}
+          phone={phone}
           ccNum={ccNum}
           exp={exp}
           updateBilling={this.updateBilling}
