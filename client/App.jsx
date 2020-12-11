@@ -23,6 +23,8 @@ class App extends React.Component {
     this.updateQuantity = this.updateQuantity.bind(this);
     this.updateTotal = this.updateTotal.bind(this);
     this.updateBilling = this.updateBilling.bind(this);
+    this.reset = this.reset.bind(this);
+    this.submitOrder = this.submitOrder.bind(this);
   }
 
   updateQuantity(event) {
@@ -50,6 +52,15 @@ class App extends React.Component {
     if (name === 'ccNum') {
       value = helpers.formatCreditCard(value);
     }
+
+    if (name === 'exp') {
+      if (!helpers.validateExpiration(value)) {
+        event.target.setCustomValidity('You have entered an expired credit card');
+      } else {
+        event.target.setCustomValidity('');
+      }
+    }
+
     this.setState({
       [name]: value,
     });
@@ -57,6 +68,24 @@ class App extends React.Component {
 
   submitOrder(event) {
     event.preventDefault();
+    this.reset();
+  }
+
+  reset() {
+    this.setState({
+      firstName: '',
+      lastName: '',
+      email: '',
+      street1: '',
+      street2: '',
+      city: '',
+      state: '',
+      zip: '',
+      quantity: '1',
+      total: '49.99',
+      ccNum: '',
+      exp: '',
+    });
   }
 
   render() {
