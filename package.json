@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/JessicaWildermuth/curology-takehome#readme",
   "devDependencies": {
+    "@babel/core": "^7.12.10",
     "babel-loader": "^8.2.2",
     "eslint": "^7.15.0",
     "eslint-config-airbnb": "^18.2.1",
