@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ProductInfo = ({ total, updateQuantity }) => (
+const ProductInfo = ({ total, updateQuantity, quantity }) => (
   <div>
     <h1>Magic Potion #1</h1>
     <img src="./magic-potion.jpg" alt="productImage" />
-    <select name="quantity" onChange={updateQuantity}>
+    <select name="quantity" value={quantity} onChange={updateQuantity}>
       <option>1</option>
       <option>2</option>
       <option>3</option>
@@ -17,6 +17,7 @@ const ProductInfo = ({ total, updateQuantity }) => (
 ProductInfo.propTypes = {
   total: PropTypes.string.isRequired,
   updateQuantity: PropTypes.func.isRequired,
+  quantity: PropTypes.number.isRequired,
 };
 
 export default ProductInfo;
