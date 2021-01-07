@@ -161,6 +161,6 @@ In regards to my own work, I feel that I could have made my components more reus
 
 Additionally, I would focus on responsive web design in order to maintain a visual appealing UI for multiple devices/screens.
 
-In terms of overal scaling, I think having a login feature for users so that they already have the billing information stored and compiled for any subsequent order would be beneficially. Similairly with saving payment methods. 
+In terms of overal scaling, I think having a login feature for users so that they already have the billing information stored and compiled for any subsequent order would be beneficial. Similairly with saving payment methods. 
 
 If more products were to be sold through this application, I would probably rethink parts of the database schema. For instance, having a table with for product information with id codes and creating another field in the order table for the product code of the order as a foreign key. I would probably also have separate customers, billing information, products, and orders tables. 
